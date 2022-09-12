@@ -5,7 +5,7 @@ import resultsView from './views/resultsView.js';
 import paginationView from './views/paginationView.js';
 import bookmarksView from './views/bookmarksView.js';
 import addRecipeView from './views/addRecipeView.js';
-import MODEL_CLOSE_SEC from './config.js';
+// import MODEL_CLOSE_SEC from './config.js';
 
 //////////////////////////////////////
 // to make old browsers renders our application - installed -> npm i core-js regenerator-runtime
@@ -129,7 +129,7 @@ const controlAddRecipe = async function (newRecipe) {
     // Close form window
     setTimeout(() => {
       addRecipeView.toggleWindow();
-    }, MODEL_CLOSE_SEC * 1000);
+    }, 2500);
   } catch (err) {
     console.error('^_^ ' + err);
     addRecipeView.renderError(err.message);
