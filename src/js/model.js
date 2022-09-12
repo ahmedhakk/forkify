@@ -40,7 +40,7 @@ export const loadRecipe = async function (id) {
         else
             state.recipe.bookmarked = false;
 
-        console.log(state.recipe);
+        // console.log(state.recipe);
     } catch (err) {
         // Temp err handling
         console.error(`${err} 🎇🎇🎇`);
@@ -52,7 +52,7 @@ export const loadSearchResults = async function (query) {
     try {
         state.search.query = query;
         const data = await AJAX(`${API_URL}?search=${query}&key=${KEY}`);
-        console.log(data);
+        // console.log(data);
 
         state.search.results = data.data.recipes.map(rec => {
             return {

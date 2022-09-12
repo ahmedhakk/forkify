@@ -16,12 +16,6 @@ import { async } from 'regenerator-runtime';
 // https://forkify-api.herokuapp.com/v2
 ///////////////////////////////////////
 
-// == It is in parcel == -> Not Understand Why
-// if (module.hot) {
-//   module.hot.accept();
-// }
-// == It is in parcel ==
-
 const controlRecipes = async function () {
   try {
     const id = window.location.hash.slice(1);
@@ -112,7 +106,7 @@ const controlAddRecipe = async function (newRecipe) {
 
     // upload new recipe data
     await model.uploadRecipe(newRecipe);
-    console.log(model.state.recipe);
+    // console.log(model.state.recipe);
 
     // Render recipe
     recipeView.render(model.state.recipe);
@@ -136,10 +130,6 @@ const controlAddRecipe = async function (newRecipe) {
   }
 };
 
-const newFeature = function () {
-  console.log('Welcome to the application!');
-};
-
 const init = function () {
   bookmarksView.addHandlerRender(controlBookmarks);
   recipeView.addHandlerRender(controlRecipes);
@@ -148,7 +138,6 @@ const init = function () {
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
   addRecipeView.addHandlerUpload(controlAddRecipe);
-  newFeature();
 };
 
 init();
